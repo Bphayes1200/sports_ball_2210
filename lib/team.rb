@@ -26,12 +26,24 @@ class Team
     end 
 
     def total_value
-        total_value = 0
+        @total_value = 0
         @roster.each do |player| 
-          total_value += player.total_cost
+           @total_value += player.total_cost
         end 
-        total_value
+        @total_value
     end    
 
-    
+    def details
+        details = {
+            "total_value" => @total_value,
+            "player_count" => player_count
+        }
+    end 
+
+    def average_cost_of_player
+       average = @total_value / player_count
+       
+       average_cost = "$#{average}"
+    end 
+
 end 
