@@ -46,4 +46,13 @@ class Team
        average_cost = "$#{average}"
     end 
 
+    def players_by_last_name
+       last_names = roster.map do |player|
+           player.last_name
+        end 
+            last_names.sort. join(", ")
+    
+    end 
+    
+
 end 
